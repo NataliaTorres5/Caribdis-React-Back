@@ -14,8 +14,11 @@ const blogSchema = new mongoose.Schema({
         max: 3000
     },
     user: {
-        type: mongoose.Types.ObjectId,
-        ref: "users",
+        type: String,
+        /* 
+         type: mongoose.Types.ObjectId,
+        ref: "users", */
+       
         required: true
     },
     date: {
@@ -31,18 +34,19 @@ const blogSchema = new mongoose.Schema({
  
     photo: {
         type: String,
-        required: true,
+        /*
         validate: function (value) {
             if (!value.startsWith('http')) {
                 throw new Error('The URL must start with http')
             }
-        }
+        }*/
     }
 })
 
-const Blog = mongoose.model(
+const blog = mongoose.model(
     'blogs',
     blogSchema
 )
 
-module.exports = Publication
+module.exports = blog
+

@@ -12,7 +12,7 @@ const destroyController = destroyController.update
 
 /* GET blogs listing. */
 
-//router.metodo(ruta del controlador )
+//router.metodo(ruta del controlador )  toca controlar todo de manera adecuadagi
 
 
 router.post('/', create) 

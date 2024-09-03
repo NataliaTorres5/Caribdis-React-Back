@@ -1,6 +1,6 @@
 const mongoose = require ('mongoose');
 
-const schema = new mongoose.Schema({ //se define el schema con todas las propiedades que requeire el elemento
+const userSchema = new mongoose.Schema({ //se define el schema con todas las propiedades que requeire el elemento
 
     name: {
         type: String,
@@ -16,7 +16,8 @@ const schema = new mongoose.Schema({ //se define el schema con todas las propied
     },
     
     mail: { 
-        type: String, required: true 
+        type: String,
+         required: true 
     },
     password: [{
         type: String,
@@ -29,10 +30,9 @@ const schema = new mongoose.Schema({ //se define el schema con todas las propied
 
 })
 
-mongoose.model(
-
-   'Users', //nombre de la colección 
-   schema 
-
-
+const user = mongoose.model(
+    'users',
+     userSchema
 )
+
+module.exports = user
